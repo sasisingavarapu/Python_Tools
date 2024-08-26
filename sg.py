@@ -1,9 +1,7 @@
 Python 3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license()" for more information.
 >>> 
-Sasikumar Reddy <sasikumarreddys@basilicfly.com>
-Wed, May 31, 6:31 PM
-to me
+
 
 ####################################################
 #$$$$$$$$$$$$ Creare new Shot Id Sg $$$$$$$$$$$$$$$$
@@ -11,13 +9,13 @@ to me
 import shotgun_api3
 # ShotGrid server and auth credentials.
 
-SERVER_PATH = "https://basilic.shotgrid.autodesk.com"
+SERVER_PATH = "https://.shotgrid.autodesk.com"
 SCRIPT_NAME = 'pipeline'
 SCRIPT_KEY =  'utakzicH#prwwmcd3dmtekumo'
 
 # Main
 
-sg = shotgun_api3.Shotgun("https://basilic.shotgrid.autodesk.com",script_name="pipeline",api_key="utakzicH#prwwmcd3dmtekumo",http_proxy="10.10.4.121:3128")
+sg = shotgun_api3.Shotgun("https://.shotgrid.autodesk.com",script_name="pipeline",api_key="utakzicH#prwwmcd3dmtekumo",http_proxy="10.10.4.121:3128")
 
 # Shot with data
 
@@ -36,13 +34,13 @@ print("The id of the {} is {}.".format(result['type'], result['id']))
 import shotgun_api3
 # ShotGrid server and auth credentials.
 
-SERVER_PATH = "https://basilic.shotgrid.autodesk.com"
+SERVER_PATH = "https://.shotgrid.autodesk.com"
 SCRIPT_NAME = 'pipeline'
 SCRIPT_KEY =  'utakzicH#prwwmcd3dmtekumo'
 
 # Main
 
-sg = shotgun_api3.Shotgun("https://basilic.shotgrid.autodesk.com",script_name="pipeline",api_key="utakzicH#prwwmcd3dmtekumo",http_proxy="10.10.4.121:3128")
+sg = shotgun_api3.Shotgun("https://.shotgrid.autodesk.com",script_name="pipeline",api_key="utakzicH#prwwmcd3dmtekumo",http_proxy="10.10.4.121:3128")
 
 # Shot with data
 
@@ -67,13 +65,13 @@ print(result)
 import shotgun_api3
 # ShotGrid server and auth credentials.
 
-SERVER_PATH = "https://basilic.shotgrid.autodesk.com"
+SERVER_PATH = "https://.shotgrid.autodesk.com"
 SCRIPT_NAME = 'pipeline'
 SCRIPT_KEY =  'utakzicH#prwwmcd3dmtekumo'
 
 # Main
 
-sg = shotgun_api3.Shotgun("https://basilic.shotgrid.autodesk.com",script_name="pipeline",api_key="utakzicH#prwwmcd3dmtekumo",http_proxy="10.10.4.121:3128")
+sg = shotgun_api3.Shotgun("https://.shotgrid.autodesk.com",script_name="pipeline",api_key="utakzicH#prwwmcd3dmtekumo",http_proxy="10.10.4.121:3128")
 
 # Shot with data
 
@@ -92,13 +90,13 @@ import shotgun_api3
 
 # ShotGrid server and auth credentials.
 
-SERVER_PATH = "https://basilic.shotgrid.autodesk.com"
+SERVER_PATH = "https://.shotgrid.autodesk.com"
 SCRIPT_NAME = 'pipeline'
 SCRIPT_KEY =  'utakzicH#prwwmcd3dmtekumo'
 
 # Main
 
-sg = shotgun_api3.Shotgun("https://basilic.shotgrid.autodesk.com",script_name="pipeline",api_key="utakzicH#prwwmcd3dmtekumo",http_proxy="10.10.4.121:3128")
+sg = shotgun_api3.Shotgun("https://.shotgrid.autodesk.com",script_name="pipeline",api_key="utakzicH#prwwmcd3dmtekumo",http_proxy="10.10.4.121:3128")
 
 
 
@@ -112,7 +110,7 @@ print(result)
 import shotgun_api3
 # ShotGrid server and auth credentials.
 
-SERVER_PATH = "https://basilic.shotgrid.autodesk.com"
+SERVER_PATH = "https://.shotgrid.autodesk.com"
 SCRIPT_NAME = 'pipeline'
 SCRIPT_KEY =  'utakzicH#prwwmcd3dmtekumo'
 PROXY_SERVER="10.10.4.121:3128"
