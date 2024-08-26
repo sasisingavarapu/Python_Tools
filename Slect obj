@@ -1,0 +1,12 @@
+import maya.cmds as cmds
+
+selections = cmds.ls(selection=True, trpe="transform")
+
+if len(selections) > 1:
+  for asset in selections:
+      cmds.capyAttr(selections[0], asset,
+                    values=True,
+                    attribute=['tx', 'ty', 'tz'])
+
+else:
+    cmds.waring("Select at least two objects.")                    
