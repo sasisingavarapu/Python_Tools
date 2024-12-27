@@ -1,0 +1,82 @@
+import shotgun_api3
+
+# ShotGrid server and authentication credentials.
+SERVER_PATH = "https://.shotgrid.autodesk.com"
+SCRIPT_NAME = 'pipeline'
+SCRIPT_KEY = 'utakzicH#prwwmcd3dmtekumo'
+PROXY_SERVER = "10.10.4.121:3128"
+
+# Initialize the Shotgun API connection
+sg = shotgun_api3.Shotgun(SERVER_PATH, script_name=SCRIPT_NAME, api_key=SCRIPT_KEY, http_proxy=PROXY_SERVER)
+
+# Function to create a new Shot
+def create_new_shot():
+    data = {
+        'project': {"type": "Project", "id": 70},
+        'code': '10_010',
+        'description': 'Demon test',
+        'sg_status_list': 'ip'
+    }
+    result = sg.create('Shot', data)
+    print(f"The id of the {result['type']} is {result['id']}.")
+
+# Function to find a Shot
+def find_shot():
+    data = {
+        'project': {"type": "Project", "id": 70},
+        'code': 'ast',
+        'description': 'Demon test',
+        'sg_status_list': 'ip'
+    }
+    result = sg.create('Shot', data)
+    print(result)
+
+    fields = ["sg_sequence", "entity", "step", "content", "sg_status_list"]
+    filters = [['id', 'is', 4389]]
+    result = sg.find('Task', filters, fields)
+    print(result)
+
+# Function to find Shots in a specific department under Task Group
+def find_shot_in_dept():
+    taskFilter = {'project': {"type": "Project", "id": 70},}
+    fields = ["id", "sg_sequence", "entity", "step", "content", "sg_status_list"]
+    filters = [['step.Step.code', 'in', "Light"]]
+    result = sg.find('Task', filters, fields)
+    print(result)
+
+# Function to find Shots and user info under Version Group
+def find_shot_user_info():
+    fields = ['user', 'sg_path_to_frames', 'sg_path_to_frames__for_qc']
+    filters = [['sg_status_list', 'is', "pcr"]]
+    result = sg.find('Version', filters, fields)
+    print(result)
+
+# Function to find a specific Shot by code
+def find_shot_by_code():
+    fields = ["id", 'code']
+    filters = [['code', 'is', 'bunny_010_0020']]
+    result = sg.find('Shot', filters, fields)
+    print(result)
+
+    fields = ["sg_sequence", "entity", "step", "content", "sg_status_list"]
+    filters = [['entity', 'is', result]]
+    result = sg.find('Task', filters, fields)
+    print(result)
+
+# Function to get all tasks under project 'dev_project' that are in 'In Progress' status
+def get_in_progress_tasks():
+    taskFilter = {'project': {"type": "Project", "id": 70},}
+    fields = ['id', "content", "entity"]
+    filters = [["project", "is", {'type': 'Project', 'id': 70}], ["sg_status_list", "is", "ip"]]
+
+    result = sg.find('Task', filters, fields)
+    print(len(result))
+
+# Main execution
+if __name__ == "__main__":
+    create_new_shot()
+    find_shot()
+    find_shot_in_dept()
+    find_shot_user_info()
+    find_shot_by_code()
+    get_in_progress_tasks()
